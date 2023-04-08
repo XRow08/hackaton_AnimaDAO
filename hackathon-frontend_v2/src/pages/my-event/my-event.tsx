@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { BiShareAlt } from "react-icons/bi";
 import { CgOptions } from "react-icons/cg";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import queryString from "query-string";
 import {
   Header,
@@ -12,21 +12,18 @@ import {
   TwitterIcon,
   Footer,
   Search,
+  CreateButton,
+  Loading,
+  TicketCard,
 } from "../../Components";
 import { useEffect, useState } from "react";
-import {
-  verUltimoId,
-  verUriDoContrato,
-  verUriDoToken,
-} from "../../services/Contratos";
-import { TicketCard } from "../../Components/Card/TicketCard";
-import { Loading } from "../../Components/Loading";
+import { verUriDoContrato, verUltimoId, verUriDoToken } from "../../services";
 
 export function MyEvent() {
   const [active, setActive] = useState("atividades");
   const [modal, setModal] = useState(false);
   const [infoEvent, setInfoEvent] = useState<any | null>(null);
-  const [tickets, setTickets] = useState<any | []>([]);
+  const [tickets, setTickets] = useState<any | null>(null);
   const location = useLocation();
   const { a }: any = queryString.parse(location.search);
   const firstFour = a.substring(0, 4);
@@ -118,31 +115,21 @@ export function MyEvent() {
             </div>
 
             {active === "atividades" && (
-              <div className="flex items-center justify-start gap-12 h-[40vh]">
-                <Link
-                  to={`/create-ticket?a=${a}`}
-                  className="flex flex-col justify-center items-center rounded-lg h-[12rem] cursor-pointer w-[10rem] font-lato font-medium text-[rgba(255,255,255,0.6)] bg-[#555555]"
-                >
-                  <svg
-                    width="66"
-                    height="66"
-                    viewBox="0 0 66 66"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      opacity="0.5"
-                      d="M4.5 33.2938H61.5M32.7062 4.5L32.7062 61.5"
-                      stroke="white"
-                      stroke-width="8"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                  Criar Ticket
-                </Link>
-                <div className="w-full h-full flex items-center pl-8 gap-4">
-                  {TicketCard(tickets)}
-                </div>
+              <div className="flex items-center justify-between h-[40vh]">
+                <CreateButton
+                  link={`/create-ticket?a=${a}`}
+                  label="Criar Ticket"
+                />
+
+                {tickets ? (
+                  <div className="w-full h-full flex items-center pl-8 gap-4">
+                    {TicketCard(tickets)}
+                  </div>
+                ) : (
+                  <div className="flex flex-col items-center justify-center h-full w-full">
+                    <Loading size="big" label="Carregando tickets..." />
+                  </div>
+                )}
               </div>
             )}
           </section>

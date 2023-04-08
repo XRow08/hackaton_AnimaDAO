@@ -35,7 +35,7 @@ export function Input({
       placeholder={placeholder}
       {...props}
       className={classNames(
-        "bg-transparent border border-[rgba(255,255,255,.3)] w-full h-12 px-4 rounded-lg drop-shadow-none shadow-none outline-none text-white font-lato font-medium hover:border-brand-text focus:border-brand-text transition-all duration-300 ease-in-out",
+        "bg-transparent border border-[rgba(255,255,255,.3)] w-full h-12 px-4 rounded-lg drop-shadow-none shadow-none text-white font-lato font-medium hover:border-brand-text focus:border-brand-text transition-all duration-300 ease-in-out",
         className
       )}
     />

@@ -1,10 +1,6 @@
 import { RouterProvider } from "react-router-dom";
-import { AuthenticatedRoutes } from "./authenticatedRoutes";
+import { UserRoutes } from "./userRoutes";
 
 export function AppRoutes() {
-  return (
-    <RouterProvider
-      router={AuthenticatedRoutes}
-    />
-  );
+  return <RouterProvider router={UserRoutes} />;
 }

@@ -8,6 +8,7 @@ import {
   Button,
   Footer,
   Textarea,
+  ToggleCheck,
 } from "../../Components";
 import { useEffect, useState } from "react";
 import { createTicket, verUriDoContrato } from "../../services/Contratos";
@@ -182,15 +183,13 @@ export function CreateTicket() {
             >
               Preço
             </Title>
-            <div className="w-full h-full gap-4">
-              <Controller
-                name="preco_ticket"
-                control={control}
-                render={({ field }) => (
-                  <Input {...field} type="number" placeholder="R$"></Input>
-                )}
-              />
-            </div>
+            <Controller
+              name="preco_ticket"
+              control={control}
+              render={({ field }) => (
+                <Input {...field} type="number" placeholder="R$"></Input>
+              )}
+            />
 
             <Title
               color="white"
@@ -198,15 +197,11 @@ export function CreateTicket() {
             >
               Token é beneficiario?
             </Title>
-            <div className="w-full h-full gap-4">
-              <Controller
-                name="beneficent"
-                control={control}
-                render={({ field }) => (
-                  <input {...field} type="checkbox" placeholder="R$" />
-                )}
-              />
-            </div>
+            <Controller
+              name="beneficent"
+              control={control}
+              render={({ field }) => <ToggleCheck {...field} />}
+            />
 
             <Button
               type="submit"

@@ -12,3 +12,4 @@ export * from "./Modal";
 export * from "./Tickets";
 export * from "./Title";
 export * from "./Icon";
+export * from "./Loading";

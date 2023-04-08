@@ -9,7 +9,7 @@ export function CreateButton({ link, label }: Props) {
   return (
     <Link
       to={link}
-      className="flex flex-col justify-center items-center rounded-lg h-[12rem] cursor-pointer min-w-[10rem] w-[10rem] font-lato font-medium text-[rgba(255,255,255,0.6)] bg-[#555555]"
+      className="flex flex-col justify-center items-center rounded-lg h-[12rem] cursor-pointer min-w-[11rem] font-lato font-medium text-[rgba(255,255,255,0.6)] bg-[#555555]"
     >
       <svg
         width="66"

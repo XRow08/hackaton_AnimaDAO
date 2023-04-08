@@ -102,7 +102,6 @@ export function CreateEvent() {
               Configuração do ticket
             </Title>
           </div>
-
           <FormCreateEvent
             onSubmit={handleSubmit(onSubmitPinata)}
             control={control}

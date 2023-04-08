@@ -5,9 +5,9 @@ import EventSoon from "../pages/event-soon";
 import Event from "../pages/event";
 import { MyEvent } from "../pages/my-event";
 import { CreateTicket } from "../pages/create-ticket";
-import Perfil from "../pages/perfil";
+import Perfil from "../pages/perfil/Perfil";
 
-export const AuthenticatedRoutes = createBrowserRouter([
+export const UserRoutes = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
