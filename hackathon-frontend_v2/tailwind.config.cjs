@@ -1,0 +1,52 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        lato: ["Lato"],
+      },
+      colors: {
+        "brand-primary": "#0E0D1A",
+        "brand-text": "#FFA958",
+        "feedback-success": "#00aa30",
+        "feedback-warning": "#ffc737",
+        "feedback-error": "#cc0000",
+        "feedback-info": "#5df2fe",
+      },
+      backgroundImage: {
+        banner: "url(/banner_ow.png)",
+        logoxr: "url(/logoXR.png)",
+        latam: "url(/latam.png)",
+        curitiba: "url(/curitiba.png)",
+        balneario: "url(/balneario.png)",
+        floriano: "url(/floriano.png)",
+        etherium: "url(/etherium.png)",
+        riocrypto: "url(/riocrypto.png)",
+        blockchain: "url(/blockchain.png)",
+        rj: "url(/rj.png)",
+        sp: "url(/sp.png)",
+        nftbrasil: "url(/nftbrasil.png)",
+        tangib: "url(/tangib.png)",
+        websummit: "url(/websummit.png)",
+        bitsampa: "url(/bitsampa.png)",
+        fintech: "url(/fintech.png)",
+        sambaeth: "url(/sambaeth.png)",
+        floriano: "url(/floriano.png)",
+        image2: "url(/image2.png)",
+        image3: "url(/image3.png)",
+        preview1: "url(/preview1.png)",
+        preview2: "url(/preview2.png)",
+        preview3: "url(/preview3.png)",
+        preview4: "url(/preview4.png)",
+        preview5: "url(/preview5.png)",
+      },
+    },
+  },
+  plugins: [],
+};
